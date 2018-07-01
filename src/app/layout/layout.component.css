@@ -1,0 +1,16 @@
+.nav-separator {
+    background-color: brown;
+    color: aliceblue;
+    margin: 0;
+}
+
+/* Contains 'col'*/
+div[class*="col"] {
+    border-style: dotted; 
+    border-width: 1px;
+    border-color: black;
+}
+/* Starts with 'col' */
+div[class^="col"]{
+
+}
