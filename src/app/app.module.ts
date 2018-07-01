@@ -4,6 +4,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
+import { UiModule } from './ui/ui.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     NgbModule.forRoot(), // ng-bootstrap module
-    BrowserModule
+    BrowserModule, UiModule
   ],
   providers: [],
   bootstrap: [AppComponent]
