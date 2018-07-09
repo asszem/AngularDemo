@@ -1,0 +1,10 @@
+.footer {
+    position: absolute;
+    vertical-align: middle;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    padding: 5px;
+    color: cadetblue;
+    line-height: 0.3;
+}
