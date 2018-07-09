@@ -11,6 +11,7 @@ import { BootstrapSamplesComponent } from './bootstrap-samples/bootstrap-samples
 import { ButtonsComponent } from './bootstrap-samples/buttons/buttons.component';
 import { NavbarsComponent } from './bootstrap-samples/navbars/navbars.component';
 import { LayoutsComponent } from './bootstrap-samples/layouts/layouts.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { LayoutsComponent } from './bootstrap-samples/layouts/layouts.component'
   ],
   imports: [
     NgbModule.forRoot(), // ng-bootstrap module
-    BrowserModule
+    BrowserModule, AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
