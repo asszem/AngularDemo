@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { ButtonsComponent } from './bootstrap-samples/buttons/buttons.component'
 import { NavbarsComponent } from './bootstrap-samples/navbars/navbars.component';
 import { LayoutsComponent } from './bootstrap-samples/layouts/layouts.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { TodolistComponent } from './todolist/todolist.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,12 @@ import { AppRoutingModule } from './/app-routing.module';
     BootstrapSamplesComponent,
     ButtonsComponent,
     NavbarsComponent,
-    LayoutsComponent
+    LayoutsComponent,
+    TodolistComponent
   ],
   imports: [
     NgbModule.forRoot(), // ng-bootstrap module
-    BrowserModule, AppRoutingModule
+    BrowserModule, AppRoutingModule, FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
