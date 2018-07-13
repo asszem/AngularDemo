@@ -3,7 +3,7 @@
   <h3 class="bg-primary p-a-1">{{getName()}}'s To Do List</h3>
 
   <div class="m-t-1 m-b-1">
-    <input class="form-control" #todoText>
+    <input class="form-control" #todoText placeholder="Add new Description">
     <button class="btn btn-primary m-t-1" (click)="addItem(todoText.value); todoText.value=''">Add new item</button>
   </div>
 
@@ -14,16 +14,16 @@
       <tr>
         <th>Item #</th>
         <th>Description</th>
-        <th>Done</th>
+        <th>Status</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let currentItem of getTodoItems(); let currentIndex = index">
+      <tr *ngFor="let currentItem of todoItems; let currentIndex = index">
         <td>{{currentIndex +1 }}</td>
         <td>
-          <input type="checkbox" [(ngModel)]="currentItem.itemCompleted" /> {{currentItem.itemDescription}}
+          <input type="checkbox" [(ngModel)]="currentItem.status" (change)="toggleItemStatus(currentItem)" />{{currentItem.description}}
         </td>
-        <td [ngSwitch]="currentItem.itemCompleted">
+        <td [ngSwitch]="currentItem.status">
           <span *ngSwitchCase="true">Completed</span>
           <span *ngSwitchDefault>Open</span>
         </td>

@@ -1,0 +1,29 @@
+{
+  "todoitems": [
+    {
+      "id": "1",
+      "description": "Fix layout",
+      "status": true
+    },
+    {
+      "id": "2",
+      "description": "Implement add new items (with UUID)",
+      "status": true
+    },
+    {
+      "id": "3",
+      "description": "Implement delete items",
+      "status": false
+    },
+    {
+      "id": "4",
+      "description": "Implement update items",
+      "status": false
+    },
+    {
+      "id": "10",
+      "description": "Implement json-server",
+      "status": true
+    }
+  ]
+}
