@@ -8,12 +8,12 @@
     {
       "id": "2",
       "description": "Implement add new ktems (with UUID)",
-      "status": false
+      "status": true
     },
     {
       "id": "3",
       "description": "Implement delete items",
-      "status": false
+      "status": true
     },
     {
       "id": "4",
@@ -26,9 +26,19 @@
       "status": true
     },
     {
-      "description": "test",
-      "status": true,
-      "id": "c98e1d89-5cff-4fa2-a69f-37e14858a29b"
+      "description": "Implement update existing items",
+      "status": false,
+      "id": "c2cec09a-5b14-4c3b-9c8c-466c9d7d545b"
+    },
+    {
+      "description": "Implement drag and drop items to reorder",
+      "status": false,
+      "id": "30ab2cfd-f662-4f0f-9b3f-64c805833779"
+    },
+    {
+      "description": "Add sorting option",
+      "status": false,
+      "id": "f598900a-2f0b-483a-bbb6-28868319a112"
     }
   ]
 }

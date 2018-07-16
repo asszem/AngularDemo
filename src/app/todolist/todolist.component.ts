@@ -53,4 +53,12 @@ export class TodolistComponent implements OnInit {
      }
    }
 
+   deleteTodoItem(item: TodoItem) {
+      this.todolistService.deleteTodoItem(item).subscribe(deletedItem => {
+          // Remove the deleted item from the array
+          this.todoItems.splice(this.todoItems.indexOf(deletedItem), 1);
+        }
+        );
+   }
+
 }

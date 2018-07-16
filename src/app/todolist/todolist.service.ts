@@ -26,6 +26,10 @@ export class TodolistService {
     return this.httpClient.post<TodoItem>(this.url, item).pipe(catchError(this.handleError));
   }
 
+  deleteTodoItem(item: TodoItem): Observable<TodoItem> {
+    return this.httpClient.delete<TodoItem>(this.url + '/' + item.id).pipe(catchError(this.handleError));
+  }
+
   // This error handling is only for basic usage, a real world application should use proper error handling
   private handleError(error: Response | any) {
     console.error('CustomerService::handleError', error);

@@ -27,6 +27,9 @@
           <span *ngSwitchCase="true">Completed</span>
           <span *ngSwitchDefault>Open</span>
         </td>
+        <td>
+          <button (click)="deleteTodoItem(currentItem)">Delete</button>
+        </td>
       </tr>
     </tbody>
   </table>
