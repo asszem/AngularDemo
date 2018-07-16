@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Model, TodoItem } from './model';
+import { TodoItem } from './todoitem';
 import { HttpClient } from '@angular/common/http';
 import { throwError as observableThrowError, Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -20,6 +20,10 @@ export class TodolistService {
   updateTodoitemStatus(item: TodoItem): Observable<TodoItem> {
     const url = this.url + '/' + item.id;
     return this.httpClient.put<TodoItem>(url, item).pipe(catchError(this.handleError));
+  }
+
+  addTodoItem(item: TodoItem): Observable<TodoItem> {
+    return this.httpClient.post<TodoItem>(this.url, item).pipe(catchError(this.handleError));
   }
 
   // This error handling is only for basic usage, a real world application should use proper error handling

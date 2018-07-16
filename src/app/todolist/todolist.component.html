@@ -3,8 +3,8 @@
   <h3 class="bg-primary p-a-1">{{getName()}}'s To Do List</h3>
 
   <div class="m-t-1 m-b-1">
-    <input class="form-control" #todoText placeholder="Add new Description">
-    <button class="btn btn-primary m-t-1" (click)="addItem(todoText.value); todoText.value=''">Add new item</button>
+    <input class="form-control" #todoText placeholder="Add new todo item">
+    <button class="btn btn-primary m-t-1" (click)="addTodoItem(todoText.value); todoText.value=''">Add new item</button>
   </div>
 
   <button class="btn btn-primary m-t-1" (click)="toggleHideCompleted()">{{hideCompleted?'Show':'Hide'}} completed</button>
