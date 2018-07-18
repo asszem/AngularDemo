@@ -7,7 +7,7 @@
     },
     {
       "id": "2",
-      "description": "Implement add new ktems (with UUID)",
+      "description": "Implement add new items (with UUID)",
       "status": true
     },
     {
@@ -17,18 +17,13 @@
     },
     {
       "id": "4",
-      "description": "Implement update items",
-      "status": false
+      "description": "Implement update items ",
+      "status": true
     },
     {
       "id": "10",
       "description": "Implement json-server",
       "status": true
-    },
-    {
-      "description": "Implement update existing items",
-      "status": false,
-      "id": "c2cec09a-5b14-4c3b-9c8c-466c9d7d545b"
     },
     {
       "description": "Implement drag and drop items to reorder",
@@ -39,6 +34,36 @@
       "description": "Add sorting option",
       "status": false,
       "id": "f598900a-2f0b-483a-bbb6-28868319a112"
+    },
+    {
+      "description": "Save hide/show completed status",
+      "status": false,
+      "id": "eeb455bd-c010-42ce-bc05-05888f6dadd4"
+    },
+    {
+      "description": "Fix footer to stay at bottom",
+      "status": false,
+      "id": "3d6e6adb-ae08-4b00-a75e-f496921130e7"
+    },
+    {
+      "description": "Fix delete if",
+      "status": false,
+      "id": "910f65e9-0107-48a8-baea-3af7d26bbb18"
+    },
+    {
+      "description": "The las in the list",
+      "status": false,
+      "id": "82dfc7c1-f096-48fd-9a92-d604932baecb"
+    },
+    {
+      "description": "aaaa",
+      "status": false,
+      "id": "dd855bc1-1f63-451c-9926-32c45f78e131"
+    },
+    {
+      "description": "cccc",
+      "status": false,
+      "id": "6c284697-4345-47f2-9bb9-385c039daafd"
     }
   ]
 }

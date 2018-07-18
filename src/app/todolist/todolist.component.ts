@@ -13,6 +13,7 @@ export class TodolistComponent implements OnInit {
 
   hideCompleted = false;
   todoItems: TodoItem[];
+  selectedItem: TodoItem;
 
   // Instantiate the todolistService in constructor so that it can be used
   constructor(private todolistService: TodolistService) { }
@@ -38,9 +39,13 @@ export class TodolistComponent implements OnInit {
     this.getTodoItems();
   }
 
-  // Save the status immediately upon change
-  toggleItemStatus(currentItem: TodoItem) {
-    this.todolistService.updateTodoitemStatus(currentItem).subscribe(_ => this.getTodoItems());
+  // Save the changes immediately upon change
+  updateItem(currentItem: TodoItem) {
+    this.todolistService.updateTodoitem(currentItem).subscribe(_ => this.getTodoItems());
+  }
+
+  selectItem(item: TodoItem) {
+    this.selectedItem = item;
   }
 
   addTodoItem(newTodoItemDescription: String) {
