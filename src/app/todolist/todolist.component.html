@@ -31,15 +31,13 @@
           <ng-template #itemSelected>
             <input [(ngModel)]="currentItem.description" (change)="updateItem(currentItem)">
             <button (click)=updateItem(currentItem)>Save</button>
+            <button (click)="deleteTodoItem(currentItem)">Delete</button>
           </ng-template>
           <ng-template #notSelectedItem>{{currentItem.description}}</ng-template>
         </td>
         <td [ngSwitch]="currentItem.status">
           <span *ngSwitchCase="true">Completed</span>
           <span *ngSwitchDefault>Open</span>
-        </td>
-        <td>
-          <button (click)="deleteTodoItem(currentItem)">Delete</button>
         </td>
       </tr>
     </tbody>

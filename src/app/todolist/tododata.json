@@ -2,7 +2,7 @@
   "todoitems": [
     {
       "id": "1",
-      "description": "Fix layout",
+      "description": "Fix CSS",
       "status": false
     },
     {
@@ -44,26 +44,6 @@
       "description": "Fix footer to stay at bottom",
       "status": false,
       "id": "3d6e6adb-ae08-4b00-a75e-f496921130e7"
-    },
-    {
-      "description": "Fix delete if",
-      "status": false,
-      "id": "910f65e9-0107-48a8-baea-3af7d26bbb18"
-    },
-    {
-      "description": "The las in the list",
-      "status": false,
-      "id": "82dfc7c1-f096-48fd-9a92-d604932baecb"
-    },
-    {
-      "description": "aaaa",
-      "status": false,
-      "id": "dd855bc1-1f63-451c-9926-32c45f78e131"
-    },
-    {
-      "description": "cccc",
-      "status": false,
-      "id": "6c284697-4345-47f2-9bb9-385c039daafd"
     }
   ]
 }
