@@ -48,6 +48,11 @@ export class TodolistComponent implements OnInit {
     this.selectedItem = item;
   }
 
+  // called when clickOutside of ng-template
+  deselectItem() {
+    this.selectedItem = undefined;
+  }
+
   addTodoItem(newTodoItemDescription: String) {
      if (newTodoItemDescription !== '') {
        const newTodoItem = new TodoItem();

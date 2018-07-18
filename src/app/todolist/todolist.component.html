@@ -26,14 +26,16 @@
         </td>
         <td (click)="selectItem(currentItem)">
           <!-- Display only if there is a selected item  -->
-          <div *ngIf="selectedItem===currentItem;then itemSelected else notSelectedItem">
+          <div *ngIf="selectedItem===currentItem;then itemSelected else itemNotSelected">
           </div>
           <ng-template #itemSelected>
-            <input [(ngModel)]="currentItem.description" (change)="updateItem(currentItem)">
-            <button (click)=updateItem(currentItem)>Save</button>
-            <button (click)="deleteTodoItem(currentItem)">Delete</button>
+            <div (clickOutside)="deselectItem()" [delayClickOutsideInit]="true">
+              <input [(ngModel)]="currentItem.description" (change)="updateItem(currentItem)">
+              <button (click)=updateItem(currentItem)>Save</button>
+              <button (click)="deleteTodoItem(currentItem)">Delete</button>
+            </div>
           </ng-template>
-          <ng-template #notSelectedItem>{{currentItem.description}}</ng-template>
+          <ng-template #itemNotSelected>{{currentItem.description}}</ng-template>
         </td>
         <td [ngSwitch]="currentItem.status">
           <span *ngSwitchCase="true">Completed</span>

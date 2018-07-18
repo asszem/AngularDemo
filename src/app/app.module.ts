@@ -5,6 +5,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
+import { ClickOutsideModule } from 'ng4-click-outside';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -35,7 +37,8 @@ import { TodolistComponent } from './todolist/todolist.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    ClickOutsideModule
   ],
   providers: [],
   bootstrap: [AppComponent]
