@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class TodolistService {
 
-  url = 'http://localhost:3000/todoitems';
+  url = 'http://localhost:3100/todoitems';
 
   constructor(private httpClient: HttpClient) { }
 
