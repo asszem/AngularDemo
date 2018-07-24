@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ClickOutsideModule } from 'ng4-click-outside';
-
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -38,9 +38,10 @@ import { TodolistComponent } from './todolist/todolist.component';
     FormsModule,
     HttpClientModule,
     HttpModule,
-    ClickOutsideModule
+    ClickOutsideModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
