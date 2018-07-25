@@ -1,9 +1,11 @@
-<div fxLayout="column" fxLayoutAlign="stretch" fxFlexFill>
-    <div fxFlex="95">
+<div class="flex-container" fxLayout="column" fxLayoutAlign="stretch" fxFlexFill>
+    <div fxFlex="auto">
         <app-header></app-header>
+    </div>
+    <div fxFlex="1 auto">
         <router-outlet></router-outlet>
     </div>
-    <div fxFlex="3">
+    <div fxFlex="auto">
         <app-footer></app-footer>
     </div>
 </div>
