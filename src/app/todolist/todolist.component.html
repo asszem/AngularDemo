@@ -2,6 +2,7 @@
 
   <h3 class="bg-primary p-a-1">{{getName()}}'s To Do List</h3>
 
+<!-- margin-top-1 padding-all-1, etc -->
   <div class="m-t-1 m-b-1">
     <input class="form-control" #todoText placeholder="Add new todo item">
     <button class="btn btn-primary m-t-1" (click)="addTodoItem(todoText.value); todoText.value=''">Add new item</button>
