@@ -1,11 +1,14 @@
 import { browser, protractor, by } from 'protractor';
-import { TodolistPage } from './todolist.po';
+import { TodolistPageObject } from './todolist.po';
+import { TodolistValidations } from './todolist.validations';
 
 describe('Todolist page', () => {
-  let page: TodolistPage;
+  let page: TodolistPageObject;
+  let validations: TodolistValidations;
 
   beforeAll(() => {
-    page = new TodolistPage();
+    page = new TodolistPageObject();
+    validations = new TodolistValidations();
     page.navigateToPage('todolist');
   });
 
@@ -30,21 +33,30 @@ describe('Todolist page', () => {
 
   const descriptionText = 'Test for the existence of this item';
   it(`should contain one or more items with the text [${descriptionText}]`, () => {
-    expect(
-      page.getASpecificTodoItemByDescription(descriptionText).count()
-    ).toBeGreaterThan(0);
+    // expect(
+    //   page.getASpecificTodoItemByDescription(descriptionText).count()
+    // ).toBeGreaterThan(0);
+    validations.isDescriptionPresent(descriptionText, page);
   });
 });
 
 describe('Todolist page checkboxes', () => {
-  let page: TodolistPage;
+  let page: TodolistPageObject;
 
   beforeAll(() => {
-    page = new TodolistPage();
+    page = new TodolistPageObject();
     page.navigateToPage('todolist');
   });
 
   it('should be present', () => {
+    // TODO: implement this
+  });
+
+  xit('should changes status to Completed when checked', () => {
+    // TODO: implement this
+  });
+
+  xit('should changes status to Open when unchecked', () => {
     // TODO: implement this
   });
 });
