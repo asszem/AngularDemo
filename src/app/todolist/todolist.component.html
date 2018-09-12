@@ -20,12 +20,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let currentItem of todoItems; let currentIndex = index">
+      <tr *ngFor="let currentItem of todoItems; let currentIndex = index" id="todoItems">
         <td>{{currentIndex +1 }}</td>
         <td>
           <input type="checkbox" [(ngModel)]="currentItem.status" (change)="updateItem(currentItem)" />
         </td>
-        <td (click)="selectItem(currentItem)">
+        <td (click)="selectItem(currentItem)" id='todoCheckbox'>
           <!-- Display only if there is a selected item  -->
           <div *ngIf="selectedItem===currentItem;then itemSelected else itemNotSelected">
           </div>

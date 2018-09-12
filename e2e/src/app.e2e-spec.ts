@@ -1,4 +1,5 @@
 import { AppPage } from './app.po';
+import { browser, protractor } from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -9,6 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
+    browser.get('http://index.hu');
     expect(page.getParagraphText()).toEqual('Angular Demo Site');
   });
 });

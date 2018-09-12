@@ -49,6 +49,11 @@
       "description": "Find out how to refresh component when data submitted (Logmessage in prototype)",
       "status": false,
       "id": "2aa489a0-f285-4918-bde8-3765a422ad71"
+    },
+    {
+      "description": "Test for the existence of this item",
+      "status": false,
+      "id": "5994d223-8bd7-4e8e-9439-d2deb63420c6"
     }
   ]
 }
