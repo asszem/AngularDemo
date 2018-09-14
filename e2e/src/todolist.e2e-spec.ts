@@ -13,30 +13,20 @@ describe('Todolist page', () => {
   });
 
   it('should have a title \'András To Do List\'', () => {
-    expect(page.getTitleText()).toEqual('András\'s To Do List');
+    validations.isPageTitle('(András\'s To Do List');
   });
 
-  it('should have more than five todo items', () => {
-    expect(page.getElementsById('todoItems').count()).toBeGreaterThan(5);
+  it('should have more than 5 todo items', () => {
+    validations.isTodoItemsCountGreaterThan(5);
   });
 
   it('should have the last todoitem in Open status', () => {
-    expect(
-      page
-        .getElementsById('todoItems')
-        .last()
-        .all(by.css('td'))
-        .last()
-        .getText()
-    ).toEqual('Open');
+    validations.isLastTodoItemOpen();
   });
 
   const descriptionText = 'Test for the existence of this item';
   it(`should contain one or more items with the text [${descriptionText}]`, () => {
-    // expect(
-    //   page.getASpecificTodoItemByDescription(descriptionText).count()
-    // ).toBeGreaterThan(0);
-    validations.isDescriptionPresent(descriptionText, page);
+    validations.isDescriptionPresent(descriptionText);
   });
 });
 
