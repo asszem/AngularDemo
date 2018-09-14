@@ -3,26 +3,6 @@
     {
       "id": "1",
       "description": "Fix CSS and Footer",
-      "status": false
-    },
-    {
-      "id": "2",
-      "description": "Implement add new items (with UUID)",
-      "status": true
-    },
-    {
-      "id": "3",
-      "description": "Implement delete items",
-      "status": true
-    },
-    {
-      "id": "4",
-      "description": "Implement update items ",
-      "status": true
-    },
-    {
-      "id": "10",
-      "description": "Implement json-server",
       "status": true
     },
     {
@@ -32,18 +12,13 @@
     },
     {
       "description": "Add sorting options",
-      "status": true,
+      "status": false,
       "id": "f598900a-2f0b-483a-bbb6-28868319a112"
     },
     {
       "description": "Save hide/show completed status",
       "status": false,
       "id": "eeb455bd-c010-42ce-bc05-05888f6dadd4"
-    },
-    {
-      "description": "Fix footer to stay at bottom",
-      "status": true,
-      "id": "3d6e6adb-ae08-4b00-a75e-f496921130e7"
     },
     {
       "description": "Find out how to refresh component when data submitted (Logmessage in prototype)",
@@ -54,6 +29,26 @@
       "description": "Test for the existence of this item",
       "status": false,
       "id": "5994d223-8bd7-4e8e-9439-d2deb63420c6"
+    },
+    {
+      "description": "Test 1",
+      "status": false,
+      "id": "bee69309-ef40-4aff-b355-661b51b9c3af"
+    },
+    {
+      "description": "Test 2",
+      "status": true,
+      "id": "025a1cc5-e8ba-40e4-871f-0c7e69f57445"
+    },
+    {
+      "description": "Test",
+      "status": false,
+      "id": "ea45e5cf-afe5-4950-b6db-d0dc0088a7a6"
+    },
+    {
+      "description": "Test",
+      "status": false,
+      "id": "dd4484c8-2c04-49dd-8984-87f8774efd73"
     }
   ]
 }

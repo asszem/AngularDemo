@@ -1,4 +1,4 @@
-import { browser, by, element, $$ } from 'protractor';
+import { browser, by, element, $$, ElementArrayFinder, ElementFinder } from 'protractor';
 
 export class TodolistPageObject {
   navigateTo() {
@@ -16,16 +16,12 @@ export class TodolistPageObject {
   // by.repeater is not working for ngFor, use workaround instead, by assigning an ID for each repeated element
   // source: https://stackoverflow.com/questions/43466476/protractor-ngfor-loop
   getElementsById(id: string) {
-      return element.all(by.id(id));
-  }
-
-  getTodoItems() {
-      return element.all(by.id('todoitem'));
+    return element.all(by.id(id));
   }
 
   // $$() is a shortcut for element.all(by.css())
   getElementsByCSS(css: string) {
-      return $$(css);
+    return $$(css);
   }
 
   // by.model and by.binding locators are not supported in Angular2
@@ -34,18 +30,46 @@ export class TodolistPageObject {
     return element(by.model(modelName));
   }
 
-  getASpecificTodoItemByDescription(description: string) {
-    return $$('td')
-        .filter(
-          function(elem, index) { // must return true or false
-            return elem.getText().then(function(content) {
-              if (content === description) {
-                return true;
-              } else {
-                return false;
-              }
-            });
-          } // end of function
-        ); // end of filter
+  getATodoItemRowByDescription(targetDescription: string): ElementArrayFinder {
+    return $$('.todoItems').filter(function(todoItemTR, index) {
+      return todoItemTR
+        .element(by.css('.todoItemDescription'))
+        .getText()
+        .then(function(currentDescription) {
+          if (targetDescription === currentDescription) {
+            return true;
+          } else {
+            return false;
+          }
+        });
+    });
+  }
+
+  toggleCheckbox(checkboxDescription: string, status: string) {
+    // const checkbox = this.getATodoItemRowByDescription(checkboxDescription).findElement(by.css('.todoItemCheckbox'));
+
+    // let checkbox: ElementFinder;
+
+    this.getATodoItemRowByDescription(checkboxDescription).then(function(todoItemTRs: ElementFinder[]) {
+      console.log('todoItemRows found: ' + (todoItemTRs.length) );
+      console.log('found tr description: ' + todoItemTRs[0]);
+      // this.checkbox = todoItemTR[0];
+    });
+
+    element.all(by.css('.todoItemCheckbox')).then(function(elements) {
+      console.log('checkboxes found:' + elements.length);
+      elements[0].click();
+    });
+
+    // if (status === 'checked') {
+    //   if (!checkbox.isEnabled) {
+    //     console.log('checking checkbox');
+    //     checkbox.sendKeys();
+    //   }
+    // } else if (status === 'unchecked') {
+    //   if (checkbox.isEnabled) {
+    //     checkbox.sendKeys();
+    //   }
+    // }
   }
 }

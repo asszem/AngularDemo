@@ -20,12 +20,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let currentItem of todoItems; let currentIndex = index" id="todoItems">
-        <td>{{currentIndex +1 }}</td>
+      <tr *ngFor="let currentItem of todoItems; let currentIndex = index" class="todoItems">
+        <td class="todoIndex">{{currentIndex +1 }}</td>
         <td>
-          <input type="checkbox" [(ngModel)]="currentItem.status" (change)="updateItem(currentItem)" />
+          <input type="checkbox" [(ngModel)]="currentItem.status" (change)="updateItem(currentItem)" class="todoItemCheckbox"/>
         </td>
-        <td (click)="selectItem(currentItem)" id='todoCheckbox'>
+        <td (click)="selectItem(currentItem)" class='todoItemDescription'>
           <!-- Display only if there is a selected item  -->
           <div *ngIf="selectedItem===currentItem;then itemSelected else itemNotSelected">
           </div>
@@ -38,7 +38,7 @@
           </ng-template>
           <ng-template #itemNotSelected>{{currentItem.description}}</ng-template>
         </td>
-        <td [ngSwitch]="currentItem.status">
+        <td [ngSwitch]="currentItem.status" class="todoItemStatus">
           <span *ngSwitchCase="true">Completed</span>
           <span *ngSwitchDefault>Open</span>
         </td>
