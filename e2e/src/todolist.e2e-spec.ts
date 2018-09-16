@@ -29,21 +29,29 @@ describe('Todolist page', () => {
     it(`should contain one or more items with the text [${descriptionText}]`, () => {
       validations.isDescriptionPresent(descriptionText);
     });
-  });
 
-  describe('checkboxes', () => {
-    it('should be present for every todo item', () => {
+    it('should have a checkbox present', () => {
       validations.isCheckboxPresentForEveryTodoItem();
     });
+  });
 
-    it('should changes status to Completed when checked', () => {
-      validations.isStatusChangedTo('Test 1', 'Completed');
-      // validations.isStatusChangedTo('Test 2', 'Open');
-      // validations.isStatusChangedTo(descriptionText, 'Completed');
+  describe('checkbox', () => {
+    const testDescription = 'Test for the existence of this item';
+
+    it(`should have status Open for ${testDescription} `, () => {
+      validations.isTodoItemStatus(testDescription, 'Open');
     });
 
-    xit('should changes status to Open when unchecked', () => {
-      // TODO: implement this
+    it(`should be unchecked for ${testDescription} `, () => {
+      validations.isCheckboxStatus(testDescription, false);
+    });
+
+    it(`should change status to Completed when checked for ${testDescription}`, () => {
+      validations.isTodoItemStatusChangedTo('Test 1', 'Completed');
+    });
+
+    it(`should change status to Open when unchecked for ${testDescription}`, () => {
+      validations.isTodoItemStatusChangedTo('Test 1', 'Open');
     });
   });
 });

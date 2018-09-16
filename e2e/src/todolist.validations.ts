@@ -36,11 +36,27 @@ export class TodolistValidations extends TodolistPageObject {
     expect(todoItemCount.count()).toEqual(todoCheckboxCount.count());
   }
 
-  isStatusChangedTo(description: string, newStatus?: string) {
+  isCheckboxStatus(description: string, expectedStatus: boolean) {
+    this.getACheckBoxStatus(description)
+      .then((result) => {
+        expect(result).toBe(expectedStatus);
+      });
+  }
+
+  isTodoItemStatus(description: string, expectedStatus: string) {
+    this.getATodoItemStatus(description)
+      .then((result) => {
+        expect(result).toBe(expectedStatus);
+      });
+  }
+
+  isTodoItemStatusChangedTo(description: string, newStatus?: string) {
     // verify if checkbox is unchecked
     // verify if status is Open
-    // press checkbox
-    this.toggleCheckbox(description, 'checked');
-    // verify if status changed to Completed
+
+    this.toggleCheckbox(description);
+    this.getATodoItemStatus(description).then((isChecked) => {
+      expect(isChecked).toBe(newStatus);
+    });
   }
 }

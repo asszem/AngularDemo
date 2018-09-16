@@ -1,4 +1,4 @@
-import { browser, by, element, $$, ElementArrayFinder, ElementFinder } from 'protractor';
+import { browser, by, element, $$, ElementArrayFinder, ElementFinder, promise } from 'protractor';
 
 export class TodolistPageObject {
   navigateTo() {
@@ -30,12 +30,12 @@ export class TodolistPageObject {
     return element(by.model(modelName));
   }
 
-  getATodoItemRowByDescription(targetDescription: string): ElementArrayFinder {
-    return $$('.todoItems').filter(function(todoItemTR, index) {
+  protected getATodoItemRowByDescription(targetDescription: string): ElementArrayFinder {
+    return $$('.todoItems').filter(function (todoItemTR, index) {
       return todoItemTR
         .element(by.css('.todoItemDescription'))
         .getText()
-        .then(function(currentDescription) {
+        .then(function (currentDescription) {
           if (targetDescription === currentDescription) {
             return true;
           } else {
@@ -45,31 +45,27 @@ export class TodolistPageObject {
     });
   }
 
-  toggleCheckbox(checkboxDescription: string, status: string) {
-    // const checkbox = this.getATodoItemRowByDescription(checkboxDescription).findElement(by.css('.todoItemCheckbox'));
+  protected getACheckBoxStatus(checkboxDescription: string): promise.Promise<boolean> {
 
-    // let checkbox: ElementFinder;
+    return this.getATodoItemRowByDescription(checkboxDescription)
+      .then((todoItemTR: ElementFinder[]) => {
+        return todoItemTR[0].element(by.css('.todoItemCheckbox')).isSelected();
+      });
+  }
 
-    this.getATodoItemRowByDescription(checkboxDescription).then(function(todoItemTRs: ElementFinder[]) {
-      console.log('todoItemRows found: ' + (todoItemTRs.length) );
-      console.log('found tr description: ' + todoItemTRs[0]);
-      // this.checkbox = todoItemTR[0];
-    });
+  public toggleCheckbox(checkboxDescription: string) {
+    this.getATodoItemRowByDescription(checkboxDescription)
+      .then((todoItemTR: ElementFinder[]) => {
+        todoItemTR[0].element(by.css('.todoItemCheckbox')).click();
+      });
 
-    element.all(by.css('.todoItemCheckbox')).then(function(elements) {
-      console.log('checkboxes found:' + elements.length);
-      elements[0].click();
-    });
+  }
 
-    // if (status === 'checked') {
-    //   if (!checkbox.isEnabled) {
-    //     console.log('checking checkbox');
-    //     checkbox.sendKeys();
-    //   }
-    // } else if (status === 'unchecked') {
-    //   if (checkbox.isEnabled) {
-    //     checkbox.sendKeys();
-    //   }
-    // }
+  protected getATodoItemStatus(checkboxDescription: string): promise.Promise<string> {
+
+    return this.getATodoItemRowByDescription(checkboxDescription)
+      .then((todoItemTR: ElementFinder[]) => {
+        return todoItemTR[0].element(by.css('.todoItemStatus')).getText();
+      });
   }
 }
