@@ -17,11 +17,20 @@ import { browser, protractor, element, by } from 'protractor';
 //   return origFn.apply(browser.driver.controlFlow(), args);
 // };
 
-describe('Slowly testing Index.hu', () => {
-
+describe('Testing Index.hu', () => {
   it('should display \'Belföld\' in top navigation bar', () => {
     browser.waitForAngularEnabled(false);
     browser.get('http://index.hu');
     element(by.className('navi_belfold')).getText();
+  });
+});
+
+describe('OUTERDESCRIBE', () => {
+  describe('INNERDESCRIBE', () => {
+    it('IT', () => {
+      browser.waitForAngularEnabled(false);
+      browser.get('http://index.hu');
+      element(by.className('navi_belfold')).getText();
+    });
   });
 });
