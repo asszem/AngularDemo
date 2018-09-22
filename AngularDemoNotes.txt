@@ -1,0 +1,31 @@
+TODO
+
+
+
+
+E2E testing 
+    - Install protractor
+    - Create e2e/output/srceenshots folder 
+    - run protractor e2e/protractor.conf.js
+
+Debugging
+    - Create new Debug Configuration
+        - Change "program" to:
+            "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+        - Change preLaunchTask to null
+        - Add stopOnEnry: false
+        - Add 
+            "args": ["${workspaceRoot}/e2e/protractor.conf.js"
+            or if specific suite to be opened
+            "args": ["${workspaceRoot}/e2e/protractor.conf.js", "--suite", "smoke"],
+    - Run Debug 
+
+
+Troubleshooting
+    - If ng serve fails becaouse of @Angular/flex-layout problems
+        - Downgrade flex-lyout to 6.0.0-beta.15
+        - npm i -g @angular/flex-layout@6.0.0-beta.15
+    - If debugger fails with error code 135 - "rror: No update-config.json found. Run 'webdriver-manager update' 
+        - Update webdriver manager in node_modules/protractor folder! 
+        - node node_modules/protractor/bin/webdriver-manager update 
+    
