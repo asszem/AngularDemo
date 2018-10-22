@@ -18,6 +18,7 @@ import { NavbarsComponent } from './bootstrap-samples/navbars/navbars.component'
 import { LayoutsComponent } from './bootstrap-samples/layouts/layouts.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { TodolistComponent } from './todolist/todolist.component';
+import { JavascriptStuffComponent } from './javascript-stuff/javascript-stuff.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TodolistComponent } from './todolist/todolist.component';
     ButtonsComponent,
     NavbarsComponent,
     LayoutsComponent,
-    TodolistComponent
+    TodolistComponent,
+    JavascriptStuffComponent
   ],
   imports: [
     NgbModule.forRoot(), // ng-bootstrap module
