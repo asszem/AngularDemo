@@ -8,6 +8,7 @@ import { LayoutsComponent } from './bootstrap-samples/layouts/layouts.component'
 import { NavbarsComponent } from './bootstrap-samples/navbars/navbars.component';
 import { TodolistComponent } from './todolist/todolist.component';
 import { JavascriptStuffComponent } from './javascript-stuff/javascript-stuff.component';
+import { ModalComponent } from './bootstrap-samples/modal/modal.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/landing-page', pathMatch: 'full' },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'layouts', component: LayoutsComponent },
   { path: 'navbars', component: NavbarsComponent },
   { path: 'todolist', component: TodolistComponent},
+  { path: 'modal', component: ModalComponent},
   { path: 'javascript-stuff', component: JavascriptStuffComponent}
 ];
 
